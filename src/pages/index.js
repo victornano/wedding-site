@@ -1,23 +1,20 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { Button } from 'antd'
-
 import Layout from '../components/layout'
-import Image from '../components/image'
+import Countdown from '../components/countdown/countdown'
+import Divider from '../components/divider/divider'
+import Location from '../components/location/location'
+import Rsvp from '../components/rsvp/rsvp'
 import SEO from '../components/seo'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-      <Image />
-    </div>
-    <Button type="primary">
-      <Link to="/page-2/">Go to page 2</Link>
-    </Button>
+    <SEO title="Nos Casamos" keywords={['boda', 'victor', 'vale', 'matrimonio']} />
+    <Countdown/>
+    <Divider/>
+    <Location/>
+    <Divider/>
+    <Rsvp/>
+    <Divider/>
   </Layout>
 )
 

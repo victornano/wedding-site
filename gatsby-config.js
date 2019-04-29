@@ -9,6 +9,11 @@ module.exports = {
       resolve: 'gatsby-plugin-less',
       options: {
         javascriptEnabled: true,
+        modifyVars: {
+          'body-background': '#000',
+          'heading-color': '#fff',
+          'text-color': '#fff',
+        }
       },
     },
     {
@@ -23,6 +28,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    'gatsby-transformer-json',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data/`,
       },
     },
     'gatsby-transformer-sharp',
