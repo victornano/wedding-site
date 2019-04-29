@@ -1,0 +1,17 @@
+.location {
+  margin: 16px;
+  text-align: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; 
+}
+.link {
+  color: white;
+  display: block;
+}
+.link span {
+  display: block;
+  text-decoration: underline;
+}

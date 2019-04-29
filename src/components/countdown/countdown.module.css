@@ -1,0 +1,22 @@
+@value primary from "../../styles/colors.css";
+@value large from "../../styles/breakpoints.css"; 
+
+.countdown {
+  padding-top: 8px;
+  /* background: black; */
+  text-align: center;
+}
+.date {
+  color: primary;
+  font-size: 18px;
+}
+.center {
+  width: 230px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+@media large {
+  .center {
+    width: 350px;
+  }
+}
