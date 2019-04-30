@@ -62,7 +62,7 @@ class Form extends Component {
       )
       : (
       <form name="rsvp" className={styles.form} data-netlify="true" netlify-honeypot="bot-field" >
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="rsvp" />
         <input type="hidden" name="invitees" value={this.state.invitees.map(invitee => `${invitee.name}: ${invitee.confirmed ? 'Si' : 'No'}  `).join(',')} />
         <p><i>Dale clic para modificar.</i></p>
         <ul className={styles.inviteeList}>
