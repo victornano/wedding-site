@@ -61,7 +61,7 @@ class Form extends Component {
         <p className={styles.message}>{this.state.message}</p>
       )
       : (
-      <form className={styles.form} data-netlify="true" onSubmit={this.handleSubmit} >
+      <form name="rsvp" className={styles.form} data-netlify="true" onSubmit={this.handleSubmit} netlify-honeypot="bot-field" >
         <p><i>Dale clic para modificar.</i></p>
         <ul className={styles.inviteeList}>
           { 
