@@ -5,23 +5,23 @@ module.exports = {
     author: '@cardiv',
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-less',
-      options: {
-        javascriptEnabled: true,
-        modifyVars: {
-          'body-background': '#000',
-          'heading-color': '#fff',
-          'text-color': '#fff',
-        }
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-antd',
-      options: {
-        style: true,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-less',
+    //   options: {
+    //     javascriptEnabled: true,
+    //     modifyVars: {
+    //       'body-background': '#000',
+    //       'heading-color': '#fff',
+    //       'text-color': '#fff',
+    //     }
+    //   },
+    // },
+    // {
+    //   resolve: 'gatsby-plugin-antd',
+    //   options: {
+    //     style: true,
+    //   },
+    // },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
