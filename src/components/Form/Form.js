@@ -28,6 +28,7 @@ class Form extends Component {
      }))
     axios.post(e.target.action, 
         {
+          'form-name': 'rsvp',
           invitees: this.state.invitees.map(invitee => `${invitee.name}: ${invitee.confirmed ? 'Si' : 'No'}  `).join(',')
         }
       )
@@ -62,6 +63,7 @@ class Form extends Component {
       )
       : (
       <form name="rsvp" className={styles.form} data-netlify="true" onSubmit={this.handleSubmit} netlify-honeypot="bot-field" method="POST" action="/#rsvp" >
+        <input type="hidden" name="form-name" value="rsvp" />
         <input type="hidden" name="invitees" />
         <p><i>Dale clic para modificar.</i></p>
         <ul className={styles.inviteeList}>
