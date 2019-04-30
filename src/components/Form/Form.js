@@ -26,11 +26,12 @@ class Form extends Component {
       ...state,
       loading: true 
      }))
-    axios.post(e.target.action, 
+    axios.post('/', 
         {
           'form-name': 'rsvp',
           invitees: this.state.invitees.map(invitee => `${invitee.name}: ${invitee.confirmed ? 'Si' : 'No'}  `).join(',')
-        }
+        },
+        { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       )
       .then(() => {
         this.setState(state => ({
@@ -62,9 +63,7 @@ class Form extends Component {
         <p className={styles.message}>{this.state.message}</p>
       )
       : (
-      <form name="rsvp" className={styles.form} data-netlify="true" onSubmit={this.handleSubmit} netlify-honeypot="bot-field" method="POST" action="/#rsvp" >
-        <input type="hidden" name="form-name" value="rsvp" />
-        <input type="hidden" name="invitees" />
+      <form name="rsvp" className={styles.form} onSubmit={this.handleSubmit} >
         <p><i>Dale clic para modificar.</i></p>
         <ul className={styles.inviteeList}>
           { 
