@@ -628,10 +628,14 @@ pre tt:after {
 body {
   background: black !important;
   color: white !important;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 12px;
 }
 h1, h2, h3 {
   font-family: 'Euphoria Script', sans-serif;
+}
+h2 {
+  font-size: 32px;
 }
 img {
   max-width: 100%;
