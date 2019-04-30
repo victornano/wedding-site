@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import styles from './Form.module.css'
 import { FaUserCheck, FaUserTimes } from 'react-icons/fa';
-import axios from "axios"
+import Cookies from 'js-cookie'
 
 class Form extends Component {
   constructor(props){
     super(props);
     this.state = {
-      message: '',
       loading: false,
       invitees: this.props.invitees 
     }
@@ -20,48 +19,12 @@ class Form extends Component {
         }))
     }))
   }
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.setState(state => ({
-      ...state,
-      loading: true 
-     }))
-    axios.post(e.target.action, 
-        {
-          invitees: this.state.invitees.map(invitee => `${invitee.name}: ${invitee.confirmed ? 'Si' : 'No'}  `).join(',')
-        }
-      )
-      .then(() => {
-        this.setState(state => ({
-          ...state,
-          message: 'Gracias por confirmar!' 
-         }))
-      })
-      .catch(() => {
-        this.setState(state => ({
-          ...state,
-          message: 'No pudimos confirmar. Por favor intenta mas tarde.' 
-        }))
-      })
-      .then(() => {
-        this.setState(state => ({
-         ...state,
-         loading: false 
-        }))
-      })
-    // debugger;
-  }
   render() {
-    return this.state.loading || this.state.message ? 
-      (
-        this.state.loading ? 
-        (
-          <div style={{textAlign: 'center'}}><div className="lds-heart"><div></div></div></div>
-        ) :
-        <p className={styles.message}>{this.state.message}</p>
-      )
-      : (
-      <form name="rsvp" className={styles.form} data-netlify="true" netlify-honeypot="bot-field" >
+    let confirmedNumber = this.state.invitees.filter(invitee => invitee.confirmed === true).length;
+    return (
+      <form name="rsvp" className={styles.form} data-netlify="true" netlify-honeypot="bot-field" onSubmit={() => {
+        Cookies.set('confirmed', 'true');
+      }} method="POST" >
         <input type="hidden" name="form-name" value="rsvp" />
         <input type="hidden" name="invitees" value={this.state.invitees.map(invitee => `${invitee.name}: ${invitee.confirmed ? 'Si' : 'No'}  `).join(',')} />
         <p><i>Dale clic para modificar.</i></p>
@@ -81,6 +44,7 @@ class Form extends Component {
             ))
           }
         </ul>
+        <p>{confirmedNumber} persona{confirmedNumber === 1 ? '' : 's'} confirmada{confirmedNumber === 1 ? '' : 's'}.</p>
         <button type="submit" className={styles.button}>Confirmar</button>
       </form>
     )
