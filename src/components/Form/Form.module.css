@@ -10,6 +10,10 @@
 }
 .item {
   cursor: pointer;
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
 }
 .item span {
   margin-left: 16px;
@@ -18,8 +22,8 @@
 .button {
   background: primary;
   border-radius: 3px;
-  font-weight: bold;
   color: #000;
+  border: none;
 }
 .message {
   text-align: center;

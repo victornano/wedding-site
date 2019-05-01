@@ -11,12 +11,12 @@ const Header = () => (
         }}
       },
       goldenRing: file( relativePath: { eq: "golden-ring.png" }) {
-        childImageSharp { fixed(width: 240) {
+        childImageSharp { fixed(width: 240, quality: 100) {
           ...GatsbyImageSharpFixed
         }}
       },
       photo: file( relativePath: { eq: "hphoto.jpg" }) {
-        childImageSharp { fixed(width: 180) {
+        childImageSharp { fixed(width: 180, quality: 100) {
           ...GatsbyImageSharpFixed
         }}
       }

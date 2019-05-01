@@ -1,0 +1,11 @@
+.gallery {
+  margin: 0 auto;
+  max-width: 720px;
+  overflow: hidden;
+}
+.gallery img{
+  margin-bottom: 0;
+  max-width: none;
+  /* max-height: 160px; */
+  border-radius: 8px;
+}

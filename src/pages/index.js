@@ -5,6 +5,7 @@ import Divider from '../components/divider/divider'
 import Location from '../components/location/location'
 import Rsvp from '../components/rsvp/rsvp'
 import SEO from '../components/seo'
+import Gallery from '../components/gallery/gallery';
 
 const IndexPage = () => (
   <Layout>
@@ -14,6 +15,9 @@ const IndexPage = () => (
     <Location/>
     <Divider/>
     <Rsvp/>
+    <Gallery/>
+    <Divider/>
+    <h2 style={{textAlign: 'center', marginBottom: '60px'}}>Los Esperamos!</h2>
   </Layout>
 )
 
