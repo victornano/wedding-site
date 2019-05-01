@@ -8,7 +8,7 @@ const Rsvp = () => {
   const getUrlParameter = (name) => {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    var results = regex.exec(window.location.search);
+    var results = typeof window !== 'undefined' ? regex.exec(window.location.search) : null;
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
   }
   return (
