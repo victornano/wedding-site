@@ -808,3 +808,8 @@ img {
 .react-add-to-calendar__dropdown ul li a i {
   padding-right: 10px;
 }
+
+.react-photo-gallery--gallery{
+  width: auto !important;
+  max-width: none !important;
+}
