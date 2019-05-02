@@ -1,0 +1,50 @@
+@value large, medium from "../../styles/breakpoints.css"; 
+
+.honeymoon {
+  position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.bg {
+  box-shadow: inset 0px 0px 14px 14px #000; /* change to alter the effect*/
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url(./bg.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.honeymoon p{
+  /* width: 60%; */
+  font-size: 26px;
+  padding: 8px;
+  margin: 8px;
+  text-shadow: 0 2px 0 black;
+  border-radius: 8px;
+  /* opacity: 0.5; */
+
+}
+@media medium {
+  .honeymoon .bg {
+    box-shadow: inset 0px 0px 32px 32px #000; /* change to alter the effect*/
+  }
+  .honeymoon p{
+    margin: 0 32px;
+    font-size: 40px;
+  }
+}
+@media large {
+  .honeymoon p{
+    margin: 0 40px;
+    font-size: 52px;
+  }
+}

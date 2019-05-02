@@ -637,6 +637,9 @@ h2,
 h3 {
   font-family: 'Euphoria Script', sans-serif;
 }
+.euphoria {
+  font-family: 'Euphoria Script', sans-serif;
+}
 h2 {
   font-size: 32px;
 }
@@ -652,7 +655,7 @@ img {
 .container {
   padding: 0 16px;
 }
-
+/* ROTATING */
 @-webkit-keyframes rotating /* Safari and Chrome */ {
   from {
     -webkit-transform: rotate(0deg);
@@ -746,13 +749,13 @@ img {
     transform: scale(0.9);
   }
 }
-
+/* clearfix */
 .clearfix:after {
   content: '';
   display: table;
   clear: both;
 }
-
+/* add to calendar  */
 .react-add-to-calendar {
   -webkit-font-smoothing: antialiased;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
@@ -808,7 +811,7 @@ img {
 .react-add-to-calendar__dropdown ul li a i {
   padding-right: 10px;
 }
-
+/* GALLERY */
 .react-photo-gallery--gallery{
   width: auto !important;
   max-width: none !important;

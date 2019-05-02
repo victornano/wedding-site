@@ -6,6 +6,7 @@ import Location from '../components/location/location'
 import Rsvp from '../components/rsvp/rsvp'
 import SEO from '../components/seo'
 import Gallery from '../components/gallery/gallery';
+import Honeymoon from '../components/Honeymoon/Honeymoon';
 
 const IndexPage = () => (
   <Layout>
@@ -15,6 +16,8 @@ const IndexPage = () => (
     <Location/>
     <Divider/>
     <Rsvp/>
+    <Honeymoon/>
+    <Divider/>
     <Gallery/>
     <Divider/>
     <h2 style={{textAlign: 'center', marginBottom: '60px'}}>Los Esperamos!</h2>

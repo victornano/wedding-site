@@ -12,7 +12,7 @@ const Divider = () => (
     }`}
     render={data => (
       <div style={{margin: '48px'}}>
-        <Img fluid={data.divider.childImageSharp.fluid} style={{width: '60%', maxWidth: '180px', margin: '0 auto'}} />
+        <Img fluid={data.divider.childImageSharp.fluid} style={{width: '60%', maxWidth: '160px', margin: '0 auto'}} />
       </div>
     )}
   />

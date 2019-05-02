@@ -14,7 +14,7 @@ const CountDown = () => {
   let icon = { 'calendar-plus-o': 'left' };
   return (
     <div className={styles.countdown}>
-      <span className={styles.date}>1 Feb 2020. 5:00PM</span>
+      <span className={styles.date}>1 Feb 2020. 5:00PM&nbsp;&nbsp;|&nbsp;&nbsp;Traje Formal</span>
       <div>
         <AddToCalendar buttonLabel="Agregar a mi calendario" buttonTemplate={icon} event={event}/>
       </div>
