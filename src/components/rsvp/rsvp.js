@@ -38,8 +38,7 @@ const Rsvp = () => {
             <Divider/>
           </div>
         ) :  edge && (
-          <>
-            {confirmed}
+          <div>
             <div className={styles.rsvp}>
               <div className="container">
                 <h2 className={styles.heading}>Asistirás?</h2>
@@ -47,7 +46,7 @@ const Rsvp = () => {
               </div>
             </div>
             <Divider/>
-          </>
+          </div>
         )
       }}
     />
