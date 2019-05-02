@@ -12,44 +12,46 @@ const Rsvp = () => {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
   }
   return (
-    <StaticQuery query={graphql`
-      query {
-        allInvitesJson{
-          edges {
-            node {
-              id,
-              invitees
+    <div class="rsvp">
+      <StaticQuery query={graphql`
+        query {
+          allInvitesJson{
+            edges {
+              node {
+                id,
+                invitees
+              }
             }
           }
-        }
-      }`}
-      render={data => {
-        const confirmed = Cookies.get('confirmed');
-        const edge = data.allInvitesJson.edges.find(edge => edge.node.id === getUrlParameter('invite'));
-        const invitees = edge && edge.node && edge.node.invitees ? edge.node.invitees.map(invitee => {
-          return {
-            name: invitee,
-            confirmed: true,
-          };
-        }) : [];
-        return confirmed ? (
-          <div className="container">
-            <p className={styles.message}>Gracias por confirmar!</p>
-            <Divider/>
-          </div>
-        ) :  edge && (
-          <div>
-            <div className={styles.rsvp}>
-              <div className="container">
-                <h2 className={styles.heading}>Asistirás?</h2>
-                <Form invitees={invitees}/>
-              </div>
+        }`}
+        render={data => {
+          const confirmed = Cookies.get('confirmed');
+          const edge = data.allInvitesJson.edges.find(edge => edge.node.id === getUrlParameter('invite'));
+          const invitees = edge && edge.node && edge.node.invitees ? edge.node.invitees.map(invitee => {
+            return {
+              name: invitee,
+              confirmed: true,
+            };
+          }) : [];
+          return confirmed ? (
+            <div className="container">
+              <p className={styles.message}>Gracias por confirmar!</p>
+              <Divider/>
             </div>
-            <Divider/>
-          </div>
-        )
-      }}
-    />
+          ) :  edge && (
+            <>
+              <div className={styles.rsvp}>
+                <div className="container">
+                  <h2 className={styles.heading}>Asistirás?</h2>
+                  <Form invitees={invitees}/>
+                </div>
+              </div>
+              <Divider/>
+            </>
+          )
+        }}
+      />
+    </div>
   )
 }
 export default Rsvp
