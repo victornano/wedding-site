@@ -12,7 +12,7 @@ const Rsvp = () => {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
   }
   return (
-    <div class="rsvp">
+    <div className="rsvp">
       <StaticQuery query={graphql`
         query {
           allInvitesJson{

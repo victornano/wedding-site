@@ -27,7 +27,7 @@ class Form extends Component {
       }} method="POST" >
         <input type="hidden" name="form-name" value="rsvp" />
         <input type="hidden" name="invitees" value={this.state.invitees.map(invitee => `${invitee.name}: ${invitee.confirmed ? 'Si' : 'No'}  `).join(',')} />
-        <p><i>Dale clic para modificar.</i></p>
+        <p style={{fontSize: '.9em'}}><i>Dale clic para modificar asistencia.</i></p>
         <ul className={styles.inviteeList}>
           { 
             this.state.invitees.map( (invitee, index) => (
