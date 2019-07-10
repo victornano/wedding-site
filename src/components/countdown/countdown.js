@@ -20,7 +20,7 @@ const CountDown = () => {
       </div>
       <div className={styles.center}>
         <FundClockProgress
-          campaignEndDate="2020-02-01 16:00:00"
+          campaignEndDate={new Date('2020-02-01')}
           icoClockStyle={{ backgroundColor: "#EDDEAD" }}
           icoClockFlipStyle={{ backgroundColor: "#EDDEAD" }}
           icoClockFlipTextStyle={{ color: "#000" }}
