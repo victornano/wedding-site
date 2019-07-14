@@ -46,6 +46,7 @@ class Form extends Component {
         </ul>
         <p>{confirmedNumber} persona{confirmedNumber === 1 ? '' : 's'} confirmada{confirmedNumber === 1 ? '' : 's'}.</p>
         <button type="submit" className={styles.button}>Confirmar</button>
+        <p style={{marginTop: '20px'}} ><small>* Solo adultos</small></p>
       </form>
     )
   }
