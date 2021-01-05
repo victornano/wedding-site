@@ -5,7 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "antd": "^3.10.3",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "cookie": "^0.3.1",
     "gatsby": "^2.0.53",
     "gatsby-image": "^2.0.20",
